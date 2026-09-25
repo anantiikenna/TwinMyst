@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
+
+  --color-abyss: #07090f;
+  --color-surface: #0d111c;
+  --color-surface-1: #0d111c;
+  --color-surface-2: #111827;
+  --color-line: #20283a;
+  --color-ink: #f8fafc;
+  --color-ink-soft: #a7b0c0;
+  --color-blue: #168bff;
+  --color-blue-deep: #3155ff;
+  --color-blue-container: #3291ff;
+  --color-blue-soft: rgba(22, 139, 255, 0.1);
+  --color-violet: #6c35ff;
+  --color-gold: #d4a72c;
+  --color-gold-bright: #f3d477;
+  --color-lav: #ccbeff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-abyss);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(22, 139, 255, 0.35);
+  color: #f8fafc;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+}
+
+.btn-blue {
+  @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue to-blue-deep
+         text-ink px-7 py-3.5 rounded-full font-semibold transition-all duration-300
+         hover:-translate-y-0.5 uppercase text-sm tracking-wider;
+  box-shadow: 0 0 28px -4px rgba(50, 145, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-blue:hover {
+  box-shadow: 0 0 36px rgba(50, 145, 255, 0.7);
+}
+
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2 bg-gold text-abyss px-7 py-3.5 rounded-full
+         font-bold transition-all duration-300 hover:bg-gold-bright hover:-translate-y-0.5
+         uppercase text-sm tracking-wider;
+  box-shadow: 0 0 20px rgba(212, 167, 44, 0.3);
+}
+
+.btn-gold:hover {
+  box-shadow: 0 0 28px rgba(212, 167, 44, 0.5);
+}
+
+.btn-outline-light {
+  @apply inline-flex items-center justify-center gap-2 border border-white/25 text-ink px-7 py-3.5
+         rounded-full font-semibold transition-all duration-300 hover:bg-white/5 hover:border-blue
+         uppercase text-sm tracking-wider;
+}
+
+.btn-outline-dark {
+  @apply inline-flex items-center justify-center gap-2 border border-blue/40 text-blue px-7 py-3.5
+         rounded-full font-semibold transition-all duration-300 hover:bg-blue-soft
+         uppercase text-sm tracking-wider;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-[1400px] px-5 md:px-8 lg:px-16;
+}
+
+.section-pad {
+  @apply py-20 md:py-28;
+}
+
+.card {
+  @apply bg-surface-2 border border-line rounded-2xl
+         transition-all duration-500;
+}
+
+.card-hover {
+  @apply hover:-translate-y-0.5;
+  border-color: rgba(22, 139, 255, 0.4);
+  box-shadow: 0 0 24px -4px rgba(22, 139, 255, 0.25);
+}
+
+.eyebrow {
+  @apply inline-block text-[11px] font-bold uppercase tracking-[0.12em] text-gold-bright;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-blue via-blue-deep to-violet bg-clip-text text-transparent;
+  filter: drop-shadow(0 0 35px rgba(50, 145, 255, 0.4));
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.tag-blue {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(22, 139, 255, 0.1);
+  border: 1px solid rgba(22, 139, 255, 0.25);
+  color: #168bff;
+}
+
+.tag-gold {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(212, 167, 44, 0.08);
+  border: 1px solid rgba(212, 167, 44, 0.3);
+  color: #f3d477;
+}
