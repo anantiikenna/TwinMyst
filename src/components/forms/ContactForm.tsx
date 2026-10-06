@@ -14,6 +14,40 @@ const SUBJECTS = [
   "Partnership / White-label",
 ];
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(formData: FormData): string | null {
+  const name = (formData.get("name") as string | null)?.trim() ?? "";
+  const email = (formData.get("email") as string | null)?.trim() ?? "";
+  const subject = (formData.get("subject") as string | null)?.trim() ?? "";
+  const message = (formData.get("message") as string | null)?.trim() ?? "";
+
+  if (!name || name.length > 100) return "Please provide a valid name.";
+  if (!email || email.length > 254 || !EMAIL_REGEX.test(email))
+    return "Please provide a valid email address.";
+  if (!subject) return "Please select a subject.";
+  if (!message || message.length < 10)
+    return "Please include a message of at least 10 characters.";
+  return null;
+}
+
+async function postToNetlifyForms(formData: FormData): Promise<boolean> {
+  try {
+    const params = new URLSearchParams();
+    formData.forEach((value, key) => {
+      if (typeof value === "string") params.append(key, value);
+    });
+    const res = await fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -21,6 +55,24 @@ export function ContactForm() {
   async function handleSubmit(formData: FormData) {
     setStatus("loading");
     setErrorMsg("");
+
+    if (formData.get("hp_field")) {
+      setStatus("success");
+      return;
+    }
+
+    const validationError = validate(formData);
+    if (validationError) {
+      setErrorMsg(validationError);
+      setStatus("error");
+      return;
+    }
+
+    if (await postToNetlifyForms(formData)) {
+      setStatus("success");
+      return;
+    }
+
     try {
       const result = await submitContactForm(formData);
       if (result.success) {
@@ -61,6 +113,7 @@ export function ContactForm() {
 
   return (
     <form action={handleSubmit} className="space-y-4" noValidate>
+      <input type="hidden" name="form-name" value="contact" />
       <div className="hidden" aria-hidden="true">
         <input type="text" name="hp_field" tabIndex={-1} autoComplete="off" />
       </div>

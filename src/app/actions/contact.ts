@@ -69,7 +69,7 @@ export async function submitContactForm(
   const safeSubject = escapeHtml(subject);
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
-  const toEmail = process.env.CONTACT_EMAIL_TO || "hello@twinkmyst.com";
+  const toEmail = process.env.CONTACT_EMAIL_TO || "ikennasea@gmail.com";
 
   const html = `
     <h2>New TwinkMyst enquiry</h2>
@@ -84,6 +84,13 @@ export async function submitContactForm(
   if (!process.env.SMTP_HOST || !process.env.SMTP_USER) {
     console.warn("[contact] SMTP not configured — logging submission only.");
     console.info(`[contact] ${subject} from ${email}: ${message.slice(0, 200)}`);
+    if (process.env.NODE_ENV === "production") {
+      return {
+        success: false,
+        error:
+          "The form is temporarily unavailable. Please email ikennasea@gmail.com directly or message us on WhatsApp.",
+      };
+    }
     return { success: true };
   }
 

@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-lg font-semibold text-ink">1. Introduction</h2>
             <p className="mt-2 text-sm text-ink-soft">
-              TwinkMyst (&quot;we&quot;, &quot;us&quot;) operates twinkmyst.com. This policy explains
+              TwinkMyst (&quot;we&quot;, &quot;us&quot;) operates twinkmyst.netlify.app. This policy explains
               what information we collect, why we collect it, and your choices.
             </p>
           </section>
@@ -79,8 +79,8 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-semibold text-ink">8. Contact Us</h2>
             <p className="mt-2 text-sm text-ink-soft">
               Questions? Email{" "}
-              <a href="mailto:hello@twinkmyst.com" className="text-blue underline">
-                hello@twinkmyst.com
+              <a href="mailto:ikennasea@gmail.com" className="text-blue underline">
+                ikennasea@gmail.com
               </a>
               .
             </p>

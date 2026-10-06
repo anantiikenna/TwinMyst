@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsentProvider } from "@/components/layout/CookieConsent";
 import { AOSInit } from "@/components/layout/AOSInit";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const jakarta = Plus_Jakarta_Sans({
@@ -13,7 +14,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://twinkmyst.com"),
+  metadataBase: new URL("https://twinkmyst.netlify.app"),
   title: {
     template: "%s | TwinkMyst",
     default: "TwinkMyst — Turning Ideas Into Digital Reality",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     title: "TwinkMyst — Turning Ideas Into Digital Reality",
     description:
       "Premium websites, applications, digital products and creative experiences for ambitious ideas.",
-    url: "https://twinkmyst.com",
+    url: "https://twinkmyst.netlify.app",
     siteName: "TwinkMyst",
     locale: "en_US",
     type: "website",
@@ -53,6 +54,7 @@ export default function RootLayout({
           <Navbar />
           <main id="main-content" className="pt-20">{children}</main>
           <Footer />
+          <WhatsAppButton />
         </CookieConsentProvider>
       </body>
     </html>

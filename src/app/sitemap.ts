@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://twinkmyst.com";
+  const baseUrl = "https://twinkmyst.netlify.app";
   const now = new Date();
 
   const staticRoutes = [

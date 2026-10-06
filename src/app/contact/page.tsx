@@ -36,8 +36,8 @@ export default function ContactPage() {
               <h2 className="font-semibold text-ink">Direct contact</h2>
               <ul className="mt-4 space-y-3 text-sm text-ink-soft">
                 <li>
-                  <a href="mailto:hello@twinkmyst.com" className="text-blue hover:underline">
-                    hello@twinkmyst.com
+                  <a href="mailto:ikennasea@gmail.com" className="text-blue hover:underline">
+                    ikennasea@gmail.com
                   </a>
                 </li>
                 <li>Remote-first · Serving clients worldwide</li>

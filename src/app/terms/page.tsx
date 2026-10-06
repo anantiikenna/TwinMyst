@@ -17,7 +17,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-lg font-semibold text-ink">1. Acceptance</h2>
             <p className="mt-2 text-sm text-ink-soft">
-              By using twinkmyst.com or engaging TwinkMyst for services, you agree to these terms. If
+              By using twinkmyst.netlify.app or engaging TwinkMyst for services, you agree to these terms. If
               you do not agree, do not use the site or services.
             </p>
           </section>
@@ -78,8 +78,8 @@ export default function TermsPage() {
             <h2 className="text-lg font-semibold text-ink">8. Contact</h2>
             <p className="mt-2 text-sm text-ink-soft">
               Questions about these terms:{" "}
-              <a href="mailto:hello@twinkmyst.com" className="text-blue underline">
-                hello@twinkmyst.com
+              <a href="mailto:ikennasea@gmail.com" className="text-blue underline">
+                ikennasea@gmail.com
               </a>
               .
             </p>

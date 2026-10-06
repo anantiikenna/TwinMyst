@@ -14,6 +14,7 @@ import {
   Sparkles,
   Mail,
   Diamond,
+  Quote,
 } from "lucide-react";
 
 const kernelMetrics = [
@@ -23,10 +24,10 @@ const kernelMetrics = [
 ];
 
 const stats = [
-  { value: "99.8", unit: "%", label: "Client Satisfaction" },
-  { value: "$120M", unit: "+", label: "Value Generated" },
-  { value: "40", unit: "+", label: "Awards & Honors" },
-  { value: "14", unit: "", label: "Timezones Powered" },
+  { value: "3", unit: "", label: "Live Client Platforms" },
+  { value: "2", unit: "", label: "Mobile Apps Delivered" },
+  { value: "6", unit: "", label: "Service Divisions" },
+  { value: "Free", unit: "", label: "Discovery Call" },
 ];
 
 const serviceCards = [
@@ -169,6 +170,23 @@ const products = [
     text: "Complete conversion-engineered headless e-commerce stack designed for luxury brands.",
     image: "/images/apex.jpg",
     alt: "Apex Commerce Kit preview showing luxury digital storefront templates",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "TwinkMyst took our practice online with a site that finally matches the quality of our clinic. Patients can now find us, read about our services and reach out before they ever call — the process was clear and everything landed on schedule.",
+    name: "Highlands Family Dental",
+    role: "Dental practice · Houston, TX",
+    href: "https://highlandsfamilydental.net/",
+  },
+  {
+    quote:
+      "From the website to the companion apps, the team delivered with real attention to detail. Communication was fast, deadlines held, and the finished product felt genuinely premium.",
+    name: "Premon Care",
+    role: "Healthcare platform · Web, Android & iOS",
+    href: "https://premoncare.netlify.app/",
   },
 ];
 
@@ -475,6 +493,48 @@ export default function Home() {
                 Institutional Core v2.4 · Global Deployment
               </span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CLIENT VOICES */}
+      <section className="w-full py-20 md:py-24 border-t border-line/30" id="testimonials">
+        <div className="container-page">
+          <div className="max-w-2xl mb-12" data-aos="fade-up">
+            <p className="eyebrow">[ Client Voices ]</p>
+            <h2 className="mt-3 text-3xl md:text-[44px] font-bold tracking-tight text-ink">
+              Real Businesses. Real Results.
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {testimonials.map((t, i) => (
+              <figure
+                key={t.name}
+                className="card p-7 flex flex-col"
+                data-aos="fade-up"
+                data-aos-delay={i * 80}
+              >
+                <Quote size={26} className="text-gold-bright" aria-hidden="true" />
+                <blockquote className="mt-5 text-sm leading-relaxed text-ink-soft flex-grow">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-6 pt-5 border-t border-line flex items-center justify-between gap-4">
+                  <div>
+                    <div className="font-semibold text-ink text-sm">{t.name}</div>
+                    <div className="text-xs text-ink-soft">{t.role}</div>
+                  </div>
+                  <a
+                    href={t.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex shrink-0 items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-blue hover:text-gold-bright transition"
+                  >
+                    Live site <ArrowUpRight size={12} />
+                  </a>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
