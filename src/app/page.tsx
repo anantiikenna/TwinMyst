@@ -267,7 +267,7 @@ export default function Home() {
             data-aos-delay="300"
           >
             <Image
-              src="/images/hero-galaxy.jpg"
+              src="/images/hero-nebula.jpg"
               alt="Cosmic nebula backdrop representing the TwinkMyst digital innovation lab"
               fill
               sizes="100vw"
