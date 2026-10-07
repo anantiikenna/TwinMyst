@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Mail } from "lucide-react";
 
 const columns = [
@@ -33,8 +34,14 @@ export function Footer() {
       <div className="container-page py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <span aria-hidden="true" className="text-blue text-xl">✦</span>
+            <Link href="/" className="flex items-center gap-3 mb-4">
+              <Image
+                src="/images/logo-mark.svg"
+                alt=""
+                width={32}
+                height={40}
+                className="shrink-0"
+              />
               <span className="font-display text-2xl font-bold tracking-tight text-ink">
                 Twink<span className="text-blue">Myst</span>
               </span>
