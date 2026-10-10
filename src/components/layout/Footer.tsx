@@ -99,10 +99,10 @@ export function Footer() {
               ))}
             </ul>
             <a
-              href="mailto:ikennasea@gmail.com"
+              href="mailto:twinkmystt@gmail.com"
               className="mt-6 inline-flex items-center gap-2 text-sm text-blue hover:text-gold-bright transition"
             >
-              <Mail size={14} /> ikennasea@gmail.com
+              <Mail size={14} /> twinkmystt@gmail.com
             </a>
           </div>
         </div>

@@ -79,8 +79,8 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-semibold text-ink">8. Contact Us</h2>
             <p className="mt-2 text-sm text-ink-soft">
               Questions? Email{" "}
-              <a href="mailto:ikennasea@gmail.com" className="text-blue underline">
-                ikennasea@gmail.com
+              <a href="mailto:twinkmystt@gmail.com" className="text-blue underline">
+                twinkmystt@gmail.com
               </a>
               .
             </p>

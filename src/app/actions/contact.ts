@@ -69,7 +69,7 @@ export async function submitContactForm(
   const safeSubject = escapeHtml(subject);
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
-  const toEmail = process.env.CONTACT_EMAIL_TO || "ikennasea@gmail.com";
+  const toEmail = process.env.CONTACT_EMAIL_TO || "twinkmystt@gmail.com";
 
   const html = `
     <h2>New TwinkMyst enquiry</h2>
@@ -88,7 +88,7 @@ export async function submitContactForm(
       return {
         success: false,
         error:
-          "The form is temporarily unavailable. Please email ikennasea@gmail.com directly or message us on WhatsApp.",
+          "The form is temporarily unavailable. Please email twinkmystt@gmail.com directly or message us on WhatsApp.",
       };
     }
     return { success: true };
